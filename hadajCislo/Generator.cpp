@@ -66,7 +66,7 @@ void Generator::Srand(uint8_t val)
 
 void Generator::generuj()
 {
-	seg.show(16); // zobrazi botku ze je pripravena hodnota
+	seg.show(16); // zobrazi bodku ze je pripravena hodnota
 	//this->nahc = rand()% 15; //return
 	short i;
 	for(;;)
@@ -175,7 +175,7 @@ void Generator::showInteval()
 	_delay_us(2);
 	seg.show(dolHranica());
 	_delay_ms(800);
-	//seg.showMultip(dolHranica(), 1800, 2); //dolh
+	//seg.showMultip(dolHranica(), 1800, 2); //dolna hranica intevalu
 	
 	presMedziHod();
 	
@@ -185,12 +185,12 @@ void Generator::showInteval()
 	_delay_us(2);
 	seg.show(horHranica());
 	_delay_ms(800);
-	//seg.showMultip(horHranica(), 1800, 2); //horh
+	//seg.showMultip(horHranica(), 1800, 2); //holna hranica intevalu
 	printf("Interval= <%d, %d> \r\n", dolh, horh);
 	
 	presMedziHod();
 	
-	rgb.set(on); // signal moze hadat cislo
+	rgb.set(on); // signal, hrac moze hadat cislo
 	_delay_ms(500);
 	rgb.set(off);
 }
@@ -211,7 +211,7 @@ uint8_t Generator::odhadCis(uint8_t odhad, uint8_t pokus)
 			if( odhad < nahc){
 				printf("odhad: %d < cislo.\r\n", odhad);
 				--pokus;
-				rgb.set(yellow); // jemenie
+				rgb.set(yellow); // je mensie
 				_delay_ms(600);
 				} else if( odhad > nahc){
 				printf("odhad: %d > cislo.\r\n", odhad);

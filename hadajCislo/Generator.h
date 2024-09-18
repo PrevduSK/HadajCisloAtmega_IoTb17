@@ -22,7 +22,7 @@ class Generator
 public:
 	uint8_t Seed;
 	uint8_t Magic;
-	uint8_t  nahc, dolh, horh, rozptil, odhad, perc, zpam;
+	uint8_t  nahc, dolh, horh, rozptil, odhad, perc, zpam; // nahodne cislo, dol. hran, hor. h.
 	Led rgb;
 	Display seg;
 protected:
